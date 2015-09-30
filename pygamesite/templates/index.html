@@ -1,0 +1,25 @@
+<!-- This is an example Django template -->
+
+<!-- First we use another template as a base. -->
+{% extends "base.html" %}
+
+<!-- Then we tell Django we'll be using static files -->
+{% load static %}
+
+<!-- The base templates has "blocks" in which we insert our content. Here we tell Django that the following content
+     should be in the "content section" -->
+{% block content %}
+
+<!-- The content section is just what is inside the <body> tag, but we can use Django templating language
+     In this case, a variable called "username" is passed to the template engine, and we render it thus: -->
+
+<h3>Hello, {{ username }}!<h3>
+
+<!-- And here is an example of a static image: -->
+
+<img src="{% static "images/python.jpg" %}">
+
+{% endblock %}
+
+<!-- That's it! This is just a very simple example. -->
+
